@@ -1,0 +1,15 @@
+<h1>Calculadora Correios</h1>
+
+<%= form_tag "home/result", method: :post do %>
+
+  <%= label_tag "CEP do Remetente" %><br>
+  <%= text_field_tag :from %>
+
+  <br>
+  
+  <%= label_tag "CEP do Destinatário" %><br>
+  <%= text_field_tag :to %>
+
+  <%= submit_tag("Go", :from => @from, :to => @to) %>
+
+<% end %>
