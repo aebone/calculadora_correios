@@ -1,4 +1,5 @@
 require 'correios-frete'
+require 'correios-cep'
 
 class HomeController < ApplicationController
   
@@ -13,6 +14,9 @@ class HomeController < ApplicationController
     @comprimento = params[:comprimento]
     @largura = params[:largura]
     @altura = params[:altura]
+
+    @addressFrom = Correios::CEP::AddressFinder.get(@from)
+    @addressTo = Correios::CEP::AddressFinder.get(@to)
 
     frete = Correios::Frete::Calculador.new :cep_origem => @from,
                                             :cep_destino => @to,

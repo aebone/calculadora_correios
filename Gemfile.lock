@@ -49,6 +49,9 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    correios-cep (0.6.3)
+      log-me (~> 0.0.10)
+      ox (~> 2.4)
     correios-frete (1.8.0)
       log-me (~> 0.0.4)
       nokogiri (~> 1.5)
@@ -85,6 +88,7 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    ox (2.4.11)
     puma (3.8.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -163,6 +167,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  correios-cep
   correios-frete
   jbuilder (~> 2.5)
   jquery-rails

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # 
 gem 'correios-frete'
+gem 'correios-cep'
 #
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

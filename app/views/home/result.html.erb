@@ -1,23 +1,39 @@
 <div class="container">
 
-    <h2><%= @sedex.nome %></h2>
-    <% if @sedex.erro? %>
-        <p>Erro: <%= @sedex.msg_erro %></p>
-    <% else %>
-        <p>
-        Valor: R$ <%= sprintf('%.2f', @sedex.valor).gsub('.', ',') %><br>
-        Prazo de Entrega: <%= @sedex.prazo_entrega %> dias úteis</p>
-    <% end %>
+    <div class="jumbotron vertical-center">
 
-    <h2><%= @pac.nome %></h2>
-    <% if @pac.erro? %>
-        <p>Erro: <%= @pac.msg_erro %></p>
-    <% else %>
-        <p>
-        Valor: R$ <%= sprintf('%.2f', @pac.valor).gsub('.', ',') %><br>
-        Prazo de Entrega: <%= @pac.prazo_entrega %> dias úteis</p>
-    <% end %>
+        <div class="row">
+            <div class="col-md-6 text-left">
+                <h3>Endereço do Remetente:</h3><br>
+                <%= @addressFrom[:address] %>. Bairro: <%= @addressFrom[:neighborhood] %>, <%= @addressFrom[:city] %>/<%= @addressFrom[:state] %>
+            </div>
+            <div class="col-md-6 text-right">
+                <h3>Endereço do Destinatário:</h3><br>
+                <%= @addressTo[:address] %>. Bairro: <%= @addressTo[:neighborhood] %>, <%= @addressTo[:city] %>/<%= @addressTo[:state] %>
+            </div>
+        </div>
 
-    comp: <%= @comprimento %>, alt: <%= @altura %>, lar: <%= @largura %>, peso: <%= @peso %>
+        <hr>
 
+        <h2><%= @sedex.nome %></h2>
+        <% if @sedex.erro? %>
+            <p>Erro: <%= @sedex.msg_erro %></p>
+        <% else %>
+            <p>
+            Valor: R$ <%= sprintf('%.2f', @sedex.valor).gsub('.', ',') %><br>
+            Prazo de Entrega: <%= @sedex.prazo_entrega %> dias úteis
+            </p>
+        <% end %>
+
+        <h2><%= @pac.nome %></h2>
+        <% if @pac.erro? %>
+            <p>Erro: <%= @pac.msg_erro %></p>
+        <% else %>
+            <p>
+            Valor: R$ <%= sprintf('%.2f', @pac.valor).gsub('.', ',') %><br>
+            Prazo de Entrega: <%= @pac.prazo_entrega %> dias úteis
+            </p>
+        <% end %>
+
+    </div>
 </div>
