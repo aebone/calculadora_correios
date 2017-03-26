@@ -1,0 +1,7 @@
+<%= @sedex.nome %>
+<%= @sedex.descricao %>
+<%= @sedex.valor %>   
+<%= @sedex.prazo_entrega %>
+<% if @sedex.erro? %>
+   <%= @sedex.msg_erro %>
+<% end %>

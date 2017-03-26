@@ -1,15 +1,24 @@
-<h1>Calculadora Correios</h1>
+<div class="container">
+  <div class="jumbotron vertical-center">
 
-<%= form_tag "home/result", method: :post do %>
+    <h2>Calculadora Correios</h2>
+    <hr>
 
-  <%= label_tag "CEP do Remetente" %><br>
-  <%= text_field_tag :from %>
+    <%= form_tag "home/result", method: :post do %>
 
-  <br>
-  
-  <%= label_tag "CEP do Destinatário" %><br>
-  <%= text_field_tag :to %>
+      <%= label_tag "CEP do Remetente" %><br>
+      <%= text_field_tag :from, nil, :class => "form-control", :placeholder => "CEP do Remetente" %>
 
-  <%= submit_tag("Go", :from => @from, :to => @to) %>
+      <br>
 
-<% end %>
+      <%= label_tag "CEP do Destinatário" %><br>
+      <%= text_field_tag :to, nil, :class => "form-control", :placeholder => "CEP do Destinatário" %>
+
+      <br>
+
+      <%= submit_tag("Calcular", :from => @from, :to => @to, :class => "btn btn-primary btn-lg") %>
+
+    <% end %>
+
+  </div>
+</div>
