@@ -1,7 +1,23 @@
-<%= @sedex.nome %>
-<%= @sedex.descricao %>
-<%= @sedex.valor %>   
-<%= @sedex.prazo_entrega %>
-<% if @sedex.erro? %>
-   <%= @sedex.msg_erro %>
-<% end %>
+<div class="container">
+
+    <h2><%= @sedex.nome %></h2>
+    <% if @sedex.erro? %>
+        <p>Erro: <%= @sedex.msg_erro %></p>
+    <% else %>
+        <p>
+        Valor: R$ <%= sprintf('%.2f', @sedex.valor).gsub('.', ',') %><br>
+        Prazo de Entrega: <%= @sedex.prazo_entrega %> dias úteis</p>
+    <% end %>
+
+    <h2><%= @pac.nome %></h2>
+    <% if @pac.erro? %>
+        <p>Erro: <%= @pac.msg_erro %></p>
+    <% else %>
+        <p>
+        Valor: R$ <%= sprintf('%.2f', @pac.valor).gsub('.', ',') %><br>
+        Prazo de Entrega: <%= @pac.prazo_entrega %> dias úteis</p>
+    <% end %>
+
+    comp: <%= @comprimento %>, alt: <%= @altura %>, lar: <%= @largura %>, peso: <%= @peso %>
+
+</div>

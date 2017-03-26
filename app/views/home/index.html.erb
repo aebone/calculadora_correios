@@ -16,7 +16,28 @@
 
       <br>
 
-      <%= submit_tag("Calcular", :from => @from, :to => @to, :class => "btn btn-primary btn-lg") %>
+      <div class="row">
+        <div class="col-md-3">
+          <%= label_tag "Peso (em kg)" %><br>
+          <%= text_field_tag :peso, nil, :class => "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= label_tag "Comprimento (em cm)" %><br>
+          <%= text_field_tag :comprimento, nil, :class => "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= label_tag "Largura (em cm)" %><br>
+          <%= text_field_tag :largura, nil, :class => "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= label_tag "Altura (em cm)" %><br>
+          <%= text_field_tag :altura, nil, :class => "form-control" %>
+        </div>
+      </div>
+
+      <br>
+
+      <%= submit_tag("Calcular", :class => "btn btn-primary btn-lg") %>
 
     <% end %>
 
