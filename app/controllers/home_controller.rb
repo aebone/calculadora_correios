@@ -24,8 +24,11 @@ class HomeController < ApplicationController
                                             :comprimento => @comprimento,
                                             :largura => @largura,
                                             :altura => @altura
+
     @sedex = frete.calcular :sedex
     @pac = frete.calcular :pac
+    @sedex_hoje = frete.calcular :sedex_hoje
+    @sedex_10 = frete.calcular :sedex_10
 
   end
 

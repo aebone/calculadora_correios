@@ -35,5 +35,25 @@
             </p>
         <% end %>
 
+        <h2><%= @sedex_hoje.nome %></h2>
+        <% if @sedex_hoje.erro? %>
+            <p>Erro: <%= @sedex_hoje.msg_erro %></p>
+        <% else %>
+            <p>
+            Valor: R$ <%= sprintf('%.2f', @sedex_hoje.valor).gsub('.', ',') %><br>
+            Prazo de Entrega: <%= @sedex_hoje.prazo_entrega %> dias úteis
+            </p>
+        <% end %>
+
+        <h2><%= @sedex_10.nome %></h2>
+        <% if @sedex_10.erro? %>
+            <p>Erro: <%= @sedex_10.msg_erro %></p>
+        <% else %>
+            <p>
+            Valor: R$ <%= sprintf('%.2f', @sedex_10.valor).gsub('.', ',') %><br>
+            Prazo de Entrega: <%= @sedex_10.prazo_entrega %> dias úteis
+            </p>
+        <% end %>
+
     </div>
 </div>
