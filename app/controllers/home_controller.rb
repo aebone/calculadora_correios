@@ -8,8 +8,8 @@ class HomeController < ApplicationController
 
   def result
     # get params from index page
-    @from = params[:from]
-    @to = params[:to]
+    @from = params[:from].gsub(/[-. ]/, '')
+    @to = params[:to].gsub(/[-. ]/, '')
     @peso = params[:peso].gsub(',', '.')
     @comprimento = params[:comprimento]
     @largura = params[:largura]
